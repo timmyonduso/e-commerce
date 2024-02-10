@@ -1,7 +1,6 @@
+import { payloadToken } from '../../_api/token'
 import { draftMode } from 'next/headers'
 import { redirect } from 'next/navigation'
-
-import { payloadToken } from '../../_api/token'
 
 export async function GET(
   req: Request & {

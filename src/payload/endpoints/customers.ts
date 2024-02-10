@@ -1,8 +1,7 @@
+import { checkRole } from '../collections/Users/checkRole'
 import type { PayloadHandler } from 'payload/config'
 import type { PayloadRequest } from 'payload/types'
 import Stripe from 'stripe'
-
-import { checkRole } from '../collections/Users/checkRole'
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
   apiVersion: '2022-08-01',

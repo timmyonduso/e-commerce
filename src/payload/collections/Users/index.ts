@@ -1,5 +1,3 @@
-import type { CollectionConfig } from 'payload/types'
-
 import { admins } from '../../access/admins'
 import { anyone } from '../../access/anyone'
 import adminsAndUser from './access/adminsAndUser'
@@ -10,6 +8,7 @@ import { ensureFirstUserIsAdmin } from './hooks/ensureFirstUserIsAdmin'
 import { loginAfterCreate } from './hooks/loginAfterCreate'
 import { resolveDuplicatePurchases } from './hooks/resolveDuplicatePurchases'
 import { CustomerSelect } from './ui/CustomerSelect'
+import type { CollectionConfig } from 'payload/types'
 
 const Users: CollectionConfig = {
   slug: 'users',

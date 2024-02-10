@@ -1,6 +1,5 @@
-import type { FieldHook } from 'payload/types'
-
 import type { Order } from '../../../payload-types'
+import type { FieldHook } from 'payload/types'
 
 export const populateOrderedBy: FieldHook<Order> = async ({ req, operation, value }) => {
   if ((operation === 'create' || operation === 'update') && !value) {

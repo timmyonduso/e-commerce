@@ -1,3 +1,7 @@
+import deepMerge from '../../utilities/deepMerge'
+import link from '../link'
+import elements from './elements'
+import leaves from './leaves'
 import { slateEditor } from '@payloadcms/richtext-slate'
 import type {
   AdapterArguments,
@@ -5,11 +9,6 @@ import type {
   RichTextLeaf,
 } from '@payloadcms/richtext-slate/dist/types'
 import type { RichTextField } from 'payload/dist/fields/config/types'
-
-import deepMerge from '../../utilities/deepMerge'
-import link from '../link'
-import elements from './elements'
-import leaves from './leaves'
 
 type RichText = (
   overrides?: Partial<RichTextField> & { admin?: AdapterArguments['admin'] },

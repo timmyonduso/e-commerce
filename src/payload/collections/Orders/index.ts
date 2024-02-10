@@ -1,5 +1,3 @@
-import type { CollectionConfig } from 'payload/types'
-
 import { admins } from '../../access/admins'
 import { adminsOrLoggedIn } from '../../access/adminsOrLoggedIn'
 import { adminsOrOrderedBy } from './access/adminsOrOrderedBy'
@@ -7,6 +5,7 @@ import { clearUserCart } from './hooks/clearUserCart'
 import { populateOrderedBy } from './hooks/populateOrderedBy'
 import { updateUserPurchases } from './hooks/updateUserPurchases'
 import { LinkToPaymentIntent } from './ui/LinkToPaymentIntent'
+import type { CollectionConfig } from 'payload/types'
 
 export const Orders: CollectionConfig = {
   slug: 'orders',

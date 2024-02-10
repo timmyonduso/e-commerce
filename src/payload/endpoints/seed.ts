@@ -1,6 +1,5 @@
-import type { PayloadHandler } from 'payload/config'
-
 import { seed as seedScript } from '../seed'
+import type { PayloadHandler } from 'payload/config'
 
 export const seed: PayloadHandler = async (req, res): Promise<void> => {
   const { user, payload } = req

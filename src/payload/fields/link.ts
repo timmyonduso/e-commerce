@@ -1,6 +1,5 @@
-import type { Field } from 'payload/types'
-
 import deepMerge from '../utilities/deepMerge'
+import type { Field } from 'payload/types'
 
 export const appearanceOptions = {
   primary: {

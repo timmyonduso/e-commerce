@@ -1,11 +1,10 @@
-import type { RequestCookie } from 'next/dist/compiled/@edge-runtime/cookies'
-
 import type { Config } from '../../payload/payload-types'
 import { ORDER } from '../_graphql/orders'
 import { PAGE } from '../_graphql/pages'
 import { PRODUCT } from '../_graphql/products'
 import { GRAPHQL_API_URL } from './shared'
 import { payloadToken } from './token'
+import type { RequestCookie } from 'next/dist/compiled/@edge-runtime/cookies'
 
 const queryMap = {
   pages: {

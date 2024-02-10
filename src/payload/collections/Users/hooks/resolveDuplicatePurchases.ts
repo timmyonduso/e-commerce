@@ -1,6 +1,5 @@
-import type { FieldHook } from 'payload/types'
-
 import type { User } from '../../../payload-types'
+import type { FieldHook } from 'payload/types'
 
 export const resolveDuplicatePurchases: FieldHook<User> = async ({ value, operation }) => {
   if ((operation === 'create' || operation === 'update') && value) {
