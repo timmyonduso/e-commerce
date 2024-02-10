@@ -29,7 +29,6 @@ export default async function Orders() {
         'Content-Type': 'application/json',
         Authorization: `JWT ${token}`,
       },
-      cache: 'no-store',
     })
       ?.then(async res => {
         if (!res.ok) notFound()

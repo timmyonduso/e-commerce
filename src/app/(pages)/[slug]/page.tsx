@@ -18,7 +18,6 @@ import { Gutter } from '../../_components/Gutter'
 // But we also need to force Next.js to dynamically render this page on each request for preview mode to work
 // See https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic
 // If you are not using Payload Cloud then this line can be removed, see `../../../README.md#cache`
-export const dynamic = 'force-dynamic'
 
 import classes from './index.module.scss'
 import Categories from '../../_components/Categories'
