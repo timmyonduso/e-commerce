@@ -4,7 +4,7 @@ module.exports = {
   ignorePatterns: ['**/payload-types.ts'],
   plugins: [
     'prettier',
-    'simple-import-sort'
+    'simple-import-sort',
   ],
   rules: {
     'prettier/prettier': 0,
