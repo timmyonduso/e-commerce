@@ -11,6 +11,7 @@ const queryMap = {
   pages: {
     query: PAGE,
     key: 'Pages',
+    
   },
   products: {
     query: PRODUCT,
