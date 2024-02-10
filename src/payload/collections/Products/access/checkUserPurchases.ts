@@ -1,6 +1,7 @@
+import type { FieldAccess } from 'payload/types'
+
 import type { Product } from '../../../payload-types'
 import { checkRole } from '../../Users/checkRole'
-import type { FieldAccess } from 'payload/types'
 
 // we need to prevent access to documents behind a paywall
 // to do this we check the document against the user's list of active purchases

@@ -1,6 +1,7 @@
+import type { RichTextElement } from '@payloadcms/richtext-slate/dist/types'
+
 import label from './label'
 import largeBody from './largeBody'
-import type { RichTextElement } from '@payloadcms/richtext-slate/dist/types'
 
 const elements: RichTextElement[] = [
   'blockquote',

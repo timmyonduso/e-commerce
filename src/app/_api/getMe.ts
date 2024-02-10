@@ -1,8 +1,9 @@
+import { cookies } from 'next/headers'
+import { redirect } from 'next/navigation'
+
 import type { User } from '../../payload/payload-types'
 import { ME_QUERY } from '../_graphql/me'
 import { GRAPHQL_API_URL } from './shared'
-import { cookies } from 'next/headers'
-import { redirect } from 'next/navigation'
 
 export const getMe = async (args?: {
   nullUserRedirect?: string
