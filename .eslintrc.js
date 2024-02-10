@@ -10,11 +10,6 @@ module.exports = {
     'prettier/prettier': 0,
     'no-console': 'off',
     'eol-last': 'off',
-    "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error",    
-  },
-  parserOptions: {
-    "sourceType": "module",
-    "ecmaVersion": "latest",
+    "simple-import-sort/imports": "off",
   },
 }
