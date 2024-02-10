@@ -10,20 +10,11 @@ module.exports = {
     'prettier/prettier': 0,
     'no-console': 'off',
     'eol-last': 'off',
-    'simple-import-sort/imports': ['error', {
-      'groups': [
-        ["^react$"],
-        ["^@"],
-        ["^\\."],
-        ["^.+\\.s?css$"],
-        ["^.+\\.s?less$"],
-        ["^.+\\.s?sass$"],
-        ["^.+\\.scss$"],
-        ["^.+\\.js$"],
-        ["^.+\\.ts$"],
-        ["^.+\\.tsx$"],
-        ["^.*"],
-      ],
-    }],
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",    
+  },
+  parserOptions: {
+    "sourceType": "module",
+    "ecmaVersion": "latest",
   },
 }

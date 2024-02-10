@@ -1,15 +1,15 @@
 'use client'
 
 import React, { Fragment, useCallback, useEffect, useRef, useState } from 'react'
-import { useForm } from 'react-hook-form'
-import { useRouter } from 'next/navigation'
+
+import classes from './index.module.scss'
 
 import { Button } from '../../../_components/Button'
 import { Input } from '../../../_components/Input'
 import { Message } from '../../../_components/Message'
 import { useAuth } from '../../../_providers/Auth'
-
-import classes from './index.module.scss'
+import { useRouter } from 'next/navigation'
+import { useForm } from 'react-hook-form'
 
 type FormData = {
   email: string
