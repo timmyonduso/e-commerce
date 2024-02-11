@@ -16,7 +16,7 @@ jobs:
       - name: Install dependencies and build Next.js app
         run: |
           yarn install  # Install project dependencies
-          yarn build:payload && yarn build:server && yarn copyfiles && yarn build:next
+          cross-env NODE_ENV=production yarn build:payload && yarn build:server && yarn copyfiles && yarn build:next
 
 
       - name: Deploy via FTPS
