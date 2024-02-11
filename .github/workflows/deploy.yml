@@ -19,10 +19,10 @@ jobs:
           touch .env.local
           echo MONGO_URL=${{ secrets.MONGO_URL }} >> .env
           echo JWT_SECRET=${{ secrets.JWT_SECRET }} >> .env
+          yarn build:next
           yarn build:payload
           yarn build:server
           yarn copyfiles 
-          yarn build:next
 
       - name: Deploy via FTPS
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
