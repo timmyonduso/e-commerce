@@ -3,7 +3,7 @@ name: Deploy to FTP
 on:
   push:
     branches:
-      - master  # Adjust the branch name as needed
+      - master  # Adjust the branch name if needed
 
 jobs:
   deploy:
@@ -13,17 +13,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 20.9.0  # Use the desired Node.js version
-
       - name: Install dependencies and build Next.js app
-        uses: SamKirkland/FTP-Deploy-Action@4.3.4
         run: |
           yarn install  # Install project dependencies
+          touch .env.local
+          echo MONGO_URL=${{ secrets.MONGO_URL }} >> .env.local
+          echo JWT_SECRET=${{ secrets.JWT_SECRET }} >> .env.local
           yarn build  # Build Next.js app
-      - name: Deploy via FTP
-        run: |
-          lftp -e "open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_HOST }}; set ssl:verify-certificate no; mirror -R -e -x .git/ -x .github/ -x .next/ -x node_modules/        
-. /public_html/; "
+
+      - name: Deploy via FTPS
+        uses: SamKirkland/FTP-Deploy-Action@4.3.4
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./  # This points to the build output directory of your Next.js app
+          server-dir: /
+          protocol: ftps
+          timeout: 300000  # Set a longer timeout value in milliseconds (here, 2 minutes)
