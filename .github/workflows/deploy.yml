@@ -18,9 +18,7 @@ jobs:
           yarn install  # Install project dependencies
           touch .env.local
           echo MONGO_URL=${{ secrets.MONGO_URL }} >> .env.local
-          echo JWT_SECRET=${{ secrets.JWT_SECRET }} >> .env.local
-          cross-env 
-          NODE_ENV=production 
+          echo JWT_SECRET=${{ secrets.JWT_SECRET }} >> .env.local 
           yarn build:payload && yarn build:server && yarn copyfiles && yarn build:next
 
 
