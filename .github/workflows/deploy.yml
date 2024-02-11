@@ -18,7 +18,7 @@ jobs:
           yarn install  # Install project dependencies
           touch .env.local
           echo MONGO_URL=${{ secrets.MONGO_URL }} >> .env
-          echo PAYLOAD_SECRET=${{ secrets.PAYLOAD_SECRET }} >> .env
+          # echo PAYLOAD_SECRET=${{ secrets.PAYLOAD_SECRET }} >> .env
           yarn build:payload && yarn build:server && yarn copyfiles && yarn build:next
 
       - name: Deploy via FTPS
