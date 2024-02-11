@@ -12,14 +12,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
-    env:
-        PAYLOAD_SECRET: 'd3d74508-d030-4f1c-b6ef-cf008320d1aa'
-
+ 
       - name: Install dependencies and build Next.js app
         run: |
           yarn install  # Install project dependencies
-          echo PAYLOAD_SECRET=${{ env.PAYLOAD_SECRET }}
+          touch .env.local
+          echo PAYLOAD_SECRET=${{ secrets.PAYLOAD_SECRET }} >> .env
           yarn build:payload && yarn build:server && yarn copyfiles && yarn build:next
 
       - name: Deploy via FTPS
