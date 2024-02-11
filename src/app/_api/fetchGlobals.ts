@@ -10,6 +10,7 @@ export async function fetchSettings(): Promise<Settings> {
     headers: {
       'Content-Type': 'application/json',
     },
+    cache: 'no-store',
     body: JSON.stringify({
       query: SETTINGS_QUERY,
     }),
@@ -34,6 +35,7 @@ export async function fetchHeader(): Promise<Header> {
     headers: {
       'Content-Type': 'application/json',
     },
+    cache: 'no-store',
     body: JSON.stringify({
       query: HEADER_QUERY,
     }),
