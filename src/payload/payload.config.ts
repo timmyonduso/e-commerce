@@ -144,6 +144,7 @@ export default buildConfig({
     }),
     payloadCloud({
       storage: false,
+      email: false,
     }),
   ],
 })
