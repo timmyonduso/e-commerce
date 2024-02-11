@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 14.21.2  # Use the desired Node.js version
+          node-version: 20.9.0  # Use the desired Node.js version
 
       - name: Install dependencies and build Next.js app
         run: |
@@ -35,4 +35,4 @@ jobs:
           local-dir: ./  # This points to the build output directory of your Next.js app
           server-dir: /
           protocol: ftps
-          timeout: 300000  # Set a longer timeout value in milliseconds (here, 2 minutes)
+          timeout: 120000  # Set a longer timeout value in milliseconds (here, 2 minutes)
