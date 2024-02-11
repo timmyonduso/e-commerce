@@ -3,7 +3,7 @@ name: Deploy to FTP
 on:
   push:
     branches:
-      - king  # Adjust the branch name as needed
+      - master  # Adjust the branch name as needed
 
 jobs:
   deploy:
@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
@@ -19,6 +19,7 @@ jobs:
           node-version: 20.9.0  # Use the desired Node.js version
 
       - name: Install dependencies and build Next.js app
+        uses: SamKirkland/FTP-Deploy-Action@4.3.4
         run: |
           yarn install  # Install project dependencies
           yarn build  # Build Next.js app
