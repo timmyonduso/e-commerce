@@ -3,8 +3,8 @@ name: Deploy to FTP
 on:
   push:
     branches:
-      - master  # Adjust the branch name as needed
-      
+      - king  # Adjust the branch name as needed
+
 
 jobs:
   deploy:
