@@ -16,9 +16,6 @@ jobs:
       - name: Install dependencies and build Next.js app
         run: |
           yarn install  # Install project dependencies
-          touch .env.local
-          echo MONGO_URL=${{ secrets.MONGO_URL }} >> .env
-          echo JWT_SECRET=${{ secrets.JWT_SECRET }} >> .env
           yarn build:payload && yarn build:server && yarn copyfiles && yarn build:next
 
 
