@@ -12,16 +12,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
- 
-    - name: Generate config
-      run: |
-        node -e "const fs = require('fs');
-            fs.writeFileSync('config.json', JSON.stringify({ mongoUrl: process.env.DATABASE_URI }));"
 
       - name: Install dependencies and build Next.js app
         run: |
           yarn install  # Install project dependencies
           touch .env
+          echo MONGO_URL=${{ secrets.MONGO_URL }} >> .env
           echo PAYLOAD_SECRET=${{ secrets.PAYLOAD_SECRET }} >> .env
           yarn build:payload && yarn build:server && yarn copyfiles && yarn build:next
 
@@ -35,3 +31,5 @@ jobs:
           server-dir: /
           protocol: ftps
           timeout: 300000000  # Set a longer timeout value in milliseconds (here, 2 minutes)
+        env:
+          MONGO_URL: ${{ secrets.MONGO_URL }}
