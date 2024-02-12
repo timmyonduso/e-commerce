@@ -5,6 +5,9 @@ on:
     branches:
       - panda  # Adjust the branch name if needed
 
+env:
+  MONGO_URL: ${{ vars.MONGO_URL }}
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -17,7 +20,7 @@ jobs:
         run: |
           yarn install  # Install project dependencies
           touch .env
-          echo MONGO_URL=${{ secrets.MONGO_URL }} >> .env
+          echo "Your Database connection URL is: $MONGO_URL"
           echo PAYLOAD_SECRET=${{ secrets.PAYLOAD_SECRET }} >> .env
           yarn build:payload && yarn build:server && yarn copyfiles && yarn build:next
 
@@ -31,5 +34,4 @@ jobs:
           server-dir: /
           protocol: ftps
           timeout: 300000000  # Set a longer timeout value in milliseconds (here, 2 minutes)
-        env:
-          MONGO_URL: ${{ secrets.MONGO_URL }}
+        
