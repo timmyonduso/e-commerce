@@ -5,9 +5,6 @@ on:
     branches:
       - panda  # Adjust the branch name if needed
 
-env:
-  MONGO_URL: ${{ vars.MONGO_URL }}
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -20,7 +17,7 @@ jobs:
         run: |
           yarn install  # Install project dependencies
           touch .env
-          echo "Your Database connection URL is: $MONGO_URL"
+          echo MONGO_URL=${{ secrets.MONGO_URL }} >> .env
           echo PAYLOAD_SECRET=${{ secrets.PAYLOAD_SECRET }} >> .env
           yarn build:payload && yarn build:server && yarn copyfiles && yarn build:next
 
