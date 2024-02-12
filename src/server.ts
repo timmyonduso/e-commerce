@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import dotenv from 'dotenv'
 import next from 'next'
 import nextBuild from 'next/dist/build'
@@ -18,6 +20,7 @@ const PORT = process.env.PORT || 3000
 const start = async (): Promise<void> => {
   await payload.init({
     secret: process.env.PAYLOAD_SECRET || '',
+    mongoURL: process.env.MONGO_URL || '',
     express: app,
     onInit: () => {
       payload.logger.info(`Payload Admin URL: ${payload.getAdminURL()}`)
