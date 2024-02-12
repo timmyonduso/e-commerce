@@ -32,6 +32,7 @@ export type Props = {
   limit?: number
   populatedDocs?: ArchiveBlockProps['populatedDocs']
   populatedDocsTotal?: ArchiveBlockProps['populatedDocsTotal']
+  selectedDocs?: ArchiveBlockProps['selectedDocs']
   categories?: ArchiveBlockProps['categories']
 }
 

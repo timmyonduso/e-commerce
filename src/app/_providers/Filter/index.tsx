@@ -6,7 +6,7 @@ interface IContextType {
     categoryFilters: string[]
     setCategoryFilters: React.Dispatch<SetStateAction<string[]>>
     sort: string
-    setSort: React.Dispatch<SetStateAction<string[]>>
+    setSort: React.Dispatch<SetStateAction<string>>
 
 }
 
