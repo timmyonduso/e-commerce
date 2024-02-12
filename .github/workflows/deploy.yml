@@ -16,7 +16,7 @@ jobs:
       - name: Install dependencies and build Next.js app
         run: |
           yarn install  # Install project dependencies
-          touch .env.local
+          touch .env
           echo MONGO_URL=${{ secrets.MONGO_URL }} >> .env
           echo PAYLOAD_SECRET=${{ secrets.PAYLOAD_SECRET }} >> .env
           yarn build:payload && yarn build:server && yarn copyfiles && yarn build:next
@@ -31,4 +31,3 @@ jobs:
           server-dir: /
           protocol: ftps
           timeout: 300000000  # Set a longer timeout value in milliseconds (here, 2 minutes)
-          
